@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections;
 
 namespace Interfaces
 {
-    //TODO: Use class "Deposit" from previous task ("Aggregation").
 
+    public abstract class Deposit : IComparable<Deposit>
+    {
+        public decimal Amount { get; }
+        public int Period { get; }
 
-    //TODO: Implement interface "IComparable<Deposit>" in abstract class "Deposit".
-
-    //Use general sum of money (deposit amount plus interest on the deposit for the entire period) as a comparison criterion.
+        public Deposit(decimal Amount, int Period)
+        {
+            decimal depositAmount = Amount;
+            int depositPeriod = Period;
+        }
+        public abstract decimal Income();
+        public int CompareTo(Deposit deposit) 
+        {
+            return Amount.CompareTo(deposit.Amount);
+        }
+      
+    }
 
 }

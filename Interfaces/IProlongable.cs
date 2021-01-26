@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Interfaces
 {
-    //TODO: Create interface: "IProlongable".
-
-    //TODO: Create method "CanToProlong" signature that returns true or false.
+    interface IProlongable
+    {
+        bool CanToProlong();
+    }
 }
